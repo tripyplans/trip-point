@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAVELX | Destinations</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8fa;
+            color: #172026;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: #0f172a;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: #5eead4;
+        }
+
+        .hero {
+            padding: 75px 20px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(135deg, #164e63, #0f766e, #0f172a);
+        }
+
+        .hero .tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border: 1px solid #99f6e4;
+            border-radius: 25px;
+            color: #ccfbf1;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 55px);
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            color: #e2e8f0;
+        }
+
+        .section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 65px 22px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-heading h2 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            color: #64748b;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e5edf1;
+            border-radius: 18px;
+            padding: 28px 24px;
+            box-shadow: 0 8px 25px rgba(15, 23, 42, .07);
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 32px rgba(15, 23, 42, .13);
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 9px;
+        }
+
+        .card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            display: inline-block;
+            text-decoration: none;
+            color: #0f766e;
+            font-weight: bold;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .bottom {
+            max-width: 900px;
+            margin: 0 auto 65px;
+            padding: 35px 25px;
+            text-align: center;
+            background: #e6f7f5;
+            border-radius: 20px;
+        }
+
+        .bottom h2 {
+            margin-bottom: 10px;
+        }
+
+        .bottom p {
+            color: #53656d;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #0f766e;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #115e59;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            padding: 28px 20px;
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">TRAVELX</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="packages.html">Packages</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="tag">EXPLORE INDIA</div>
+        <h1>Discover Destinations</h1>
+        <p>
+            From peaceful beaches to majestic mountains,
+            explore amazing places and find inspiration
+            for your next journey.
+        </p>
+    </header>
+
+    <main class="section">
+        <div class="section-heading">
+            <h2>Where Will You Go?</h2>
+            <p>Choose a destination to discover more.</p>
+        </div>
+
+        <div class="destination-grid">
+
+            <article class="card">
+                <div class="card-icon">🏖️</div>
+                <h3>Goa</h3>
+                <p>Discover beautiful beaches, coastal views, local food and colourful sunsets.</p>
+                <a href="goa.html">Explore Goa →</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🏔️</div>
+                <h3>Manali</h3>
+                <p>Enjoy mountain landscapes, peaceful valleys and exciting outdoor adventures.</p>
+                <a href="manali.html">Explore Manali →</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🏰</div>
+                <h3>Jaipur</h3>
+                <p>Explore royal palaces, historic forts and the rich heritage of Rajasthan.</p>
+                <a href="jaipur.html">Explore Jaipur →</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🌴</div>
+                <h3>Kerala</h3>
+                <p>Experience peaceful backwaters, green landscapes and beautiful beaches.</p>
+                <a href="kerala.html">Explore Kerala →</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">❄️</div>
+                <h3>Kashmir</h3>
+                <p>Discover scenic valleys, lakes and breathtaking mountain views.</p>
+                <a href="kashmir.html">Explore Kashmir →</a>
+            </article>
+
+            <article class="card">
+                <div class="card-icon">🌆</div>
+                <h3>Mumbai</h3>
+                <p>Explore famous landmarks, busy markets and the energy of city life.</p>
+                <a href="mumbai.html">Explore Mumbai →</a>
+            </article>
+
+        </div>
+    </main>
+
+    <section class="bottom">
+        <h2>Your Next Journey Starts Here</h2>
+        <p>Browse our sample travel packages and find inspiration for your next trip.</p>
+        <a href="packages.html" class="btn">Explore Packages →</a>
+    </section>
+
+    <footer>
+        <p>© 2026 TRAVELX — Explore • Travel • Discover</p>
+        <p>Student Project | Built with HTML and CSS</p>
+    </footer>
+
+</body>
+</html>
+```
