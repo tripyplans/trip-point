@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kerala | TRAVELX</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f8fa;
+      color: #172026;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: #0f172a;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #2dd4bf;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #2dd4bf;
+    }
+
+    .hero {
+      min-height: 390px;
+      padding: 80px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #064e3b, #059669, #65a30d);
+    }
+
+    .tag {
+      background: rgba(255,255,255,0.18);
+      padding: 7px 16px;
+      border-radius: 30px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 62px);
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 24px;
+      border-radius: 7px;
+      background: #2dd4bf;
+      color: #0f172a;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    .section {
+      padding: 55px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #64748b;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(15,23,42,0.07);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #047857;
+    }
+
+    .highlights {
+      background: #ecfdf5;
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .highlights ul {
+      padding-left: 22px;
+    }
+
+    .highlights li {
+      margin: 10px 0;
+    }
+
+    .back {
+      text-align: center;
+      padding: 0 20px 55px;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    footer p + p {
+      margin-top: 5px;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 40px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">TRAVELX</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="packages.html">Packages</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <span class="tag">🌴 God's Own Country</span>
+    <h1>Discover Kerala</h1>
+    <p>
+      Experience peaceful backwaters, green tea gardens,
+      beautiful beaches and the natural beauty of South India.
+    </p>
+    <a href="#highlights" class="btn">Explore Kerala ↓</a>
+  </header>
+
+  <section class="section">
+    <div class="section-title">
+      <h2>Experience Kerala</h2>
+      <p>Nature, relaxation and unforgettable adventures.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <div class="icon">🛶</div>
+        <h3>Backwaters</h3>
+        <p>
+          Enjoy a relaxing houseboat journey through the
+          beautiful backwaters and canals of Alleppey.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="icon">🍃</div>
+        <h3>Tea Gardens</h3>
+        <p>
+          Explore the green tea plantations, misty hills
+          and scenic landscapes of Munnar.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="icon">🏖️</div>
+        <h3>Beautiful Beaches</h3>
+        <p>
+          Spend peaceful time at Kerala's beaches and enjoy
+          coastal views, sunsets and local culture.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="highlights">
+    <div class="section-title">
+      <h2>Kerala Travel Guide</h2>
+      <p>Some useful details to plan your trip.</p>
+    </div>
+
+    <div class="highlights">
+      <ul>
+        <li><strong>Best time to visit:</strong> October to March for many popular destinations</li>
+        <li><strong>Famous places:</strong> Munnar, Alleppey, Kochi and Wayanad</li>
+        <li><strong>Local food:</strong> Appam, puttu, Kerala sadya and banana chips</li>
+        <li><strong>Popular activities:</strong> Houseboat trips, nature walks and sightseeing</li>
+        <li><strong>Travel tip:</strong> Check local weather before planning outdoor activities.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="back">
+    <a href="destinations.html" class="btn">← Back to Destinations</a>
+  </div>
+
+  <footer>
+    <p>© 2026 TRAVELX — Explore • Travel • Discover</p>
+    <p>Student Project | Built with HTML and CSS</p>
+  </footer>
+
+</body>
+</html>
+```
