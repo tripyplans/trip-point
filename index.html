@@ -4,372 +4,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#ffffff">
+    <title>TRAVELX | Explore the World</title>
 
-    <title>Tripy Plan | Explore Beyond</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <meta name="description"
-          content="Discover beautiful destinations, hidden places and unforgettable adventures with Tripy Plan.">
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f8fa;
+            color: #172026;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: #0f172a;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: 900;
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #5eead4;
+        }
+
+        .hero {
+            min-height: 570px;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+            color: white;
+            background:
+                linear-gradient(120deg, rgba(15,23,42,.95), rgba(15,118,110,.75)),
+                linear-gradient(135deg, #164e63, #0f766e, #0f172a);
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 7px 15px;
+            border: 1px solid rgba(255,255,255,.4);
+            border-radius: 25px;
+            color: #ccfbf1;
+            margin-bottom: 25px;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.1;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: #5eead4;
+        }
+
+        .hero p {
+            color: #e2e8f0;
+            font-size: 17px;
+            max-width: 600px;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #14b8a6;
+            color: #062c2b;
+            padding: 13px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: #5eead4;
+            transform: translateY(-3px);
+        }
+
+        .section {
+            max-width: 1150px;
+            margin: auto;
+            padding: 75px 22px;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: #64748b;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px 24px;
+            box-shadow: 0 8px 25px rgba(15,23,42,.07);
+            transition: .3s;
+            border: 1px solid #e8eef2;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 35px rgba(15,23,42,.12);
+        }
+
+        .destination-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .destination-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .destination-card p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .destination-card a {
+            color: #0f766e;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .destination-card a:hover {
+            text-decoration: underline;
+        }
+
+        .features {
+            background: #e8f7f5;
+        }
+
+        .feature-grid {
+            max-width: 1100px;
+            margin: auto;
+            padding: 65px 22px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 25px;
+        }
+
+        .feature-icon {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            margin-bottom: 10px;
+        }
+
+        .feature p {
+            color: #53656d;
+            font-size: 14px;
+        }
+
+        .cta {
+            margin: 70px auto;
+            max-width: 1050px;
+            padding: 50px 25px;
+            text-align: center;
+            background: #0f172a;
+            color: white;
+            border-radius: 22px;
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            padding: 28px 20px;
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 800px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .hero {
+                min-height: 480px;
+                padding: 55px 7%;
+            }
+
+            .destination-grid,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading h2 {
+                font-size: 29px;
+            }
+
+            .cta {
+                margin: 40px 18px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
-    <header class="header">
-        <nav class="navbar">
-
-            <a href="index.html" class="logo">
-                ✳ Tripy<span>Plan</span>
-            </a>
-
-            <div class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="destinations.html">Destinations</a>
-                <a href="packages.html">Packages</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </div>
-
-            <a href="destinations.html" class="nav-button">
-                Explore <span>↗</span>
-            </a>
-
-        </nav>
-    </header>
-
-
-    <main>
-
-        <!-- HERO SECTION -->
-        <section class="hero">
-
-            <div class="hero-image"></div>
-            <div class="hero-shade"></div>
-
-            <div class="hero-inner">
-
-                <p class="eyebrow">
-                    <span class="dot"></span>
-                    YOUR JOURNEY BEGINS HERE
-                </p>
-
-                <h1>
-                    Leave Ordinary.<br>
-                    <span>Live Extraordinary.</span>
-                </h1>
-
-                <p class="hero-description">
-                    Discover breathtaking destinations, secret places
-                    and amazing adventures. Your next story starts here.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="destinations.html" class="btn btn-blue">
-                        Explore Destinations ↗
-                    </a>
-
-                    <a href="#discover" class="btn btn-glass">
-                        Discover Tripy ↓
-                    </a>
-                </div>
-
-                <div class="hero-footer">
-                    <div class="hero-note">
-                        <span class="note-icon">✈</span>
-
-                        <div>
-                            <strong>Adventure is calling.</strong>
-                            <p>Where will you go next?</p>
-                        </div>
-                    </div>
-
-                    <a href="#discover" class="scroll-link">
-                        SCROLL TO EXPLORE ↓
-                    </a>
-                </div>
-
-            </div>
-
-            <div class="hero-number">
-                01 <span>/ 04</span>
-            </div>
-
-        </section>
-
-
-        <!-- INTRODUCTION -->
-        <section class="intro section" id="discover">
-
-            <div class="intro-title">
-                <p class="eyebrow">A WORLD OF POSSIBILITIES</p>
-
-                <h2>
-                    More than a trip.<br>
-                    <span>A feeling.</span>
-                </h2>
-            </div>
-
-            <div class="intro-text">
-                <p>
-                    Some places take your breath away. Some moments stay
-                    with you forever. Discover mountains, peaceful beaches,
-                    beautiful forests and unforgettable travel experiences.
-                </p>
-
-                <a href="about.html" class="under-link">
-                    Discover our story ↗
-                </a>
-            </div>
-
-        </section>
-
-
-        <!-- FEATURED DESTINATIONS -->
-        <section class="places section">
-
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">PICK YOUR PARADISE</p>
-                    <h2>Where to <span>next?</span></h2>
-                </div>
-
-                <a href="destinations.html" class="under-link">
-                    All destinations ↗
-                </a>
-            </div>
-
-
-            <div class="places-grid">
-
-                <!-- MANALI -->
-                <a href="destinations.html#manali"
-                   class="place place-one">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=1100&q=85"
-                        alt="Himalayan mountains near Manali"
-                        loading="lazy">
-
-                    <span class="place-number">
-                        01 / MOUNTAINS
-                    </span>
-
-                    <div class="place-bottom">
-                        <div>
-                            <p>HIMACHAL PRADESH</p>
-                            <h3>Mountain Escape</h3>
-                        </div>
-
-                        <span class="round-arrow">↗</span>
-                    </div>
-
-                </a>
-
-
-                <!-- GOA -->
-                <a href="destinations.html#goa"
-                   class="place place-two">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=85"
-                        alt="Beautiful tropical beach"
-                        loading="lazy">
-
-                    <span class="place-number">
-                        02 / BEACHES
-                    </span>
-
-                    <div class="place-bottom">
-                        <div>
-                            <p>GOA, INDIA</p>
-                            <h3>Chase the Blue</h3>
-                        </div>
-
-                        <span class="round-arrow">↗</span>
-                    </div>
-
-                </a>
-
-
-                <!-- NATURE -->
-                <a href="destinations.html#meghalaya"
-                   class="place place-three">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=85"
-                        alt="Lush green forest"
-                        loading="lazy">
-
-                    <span class="place-number">
-                        03 / NATURE
-                    </span>
-
-                    <div class="place-bottom">
-                        <div>
-                            <p>MEGHALAYA, INDIA</p>
-                            <h3>Into the Green</h3>
-                        </div>
-
-                        <span class="round-arrow">↗</span>
-                    </div>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ADVENTURE BANNER -->
-        <section class="adventure">
-
-            <div class="adventure-image"></div>
-            <div class="adventure-overlay"></div>
-
-            <div class="adventure-content">
-                <p class="eyebrow">FOR THE LOVE OF ADVENTURE</p>
-
-                <h2>
-                    The best views<br>
-                    come after the<br>
-                    <span>hardest climbs.</span>
-                </h2>
-
-                <p>
-                    Take the long way. Find the hidden trail.
-                    Discover somewhere extraordinary.
-                </p>
-
-                <a href="packages.html" class="btn btn-white">
-                    Find Your Adventure ↗
-                </a>
-            </div>
-
-        </section>
-
-
-        <!-- WHY CHOOSE US -->
-        <section class="why section">
-
-            <div class="why-heading">
-                <p class="eyebrow">THE TRIPY WAY</p>
-
-                <h2>
-                    Dream it.<br>
-                    <span>Plan it. Live it.</span>
-                </h2>
-
-                <p>
-                    Great adventures begin with a little inspiration.
-                </p>
-            </div>
-
-
-            <div class="features">
-
-                <article class="feature">
-                    <div class="feature-icon">⌖</div>
-
-                    <div>
-                        <h3>Places worth exploring</h3>
-                        <p>
-                            Discover famous destinations and hidden gems
-                            across India.
-                        </p>
-                    </div>
-
-                    <span class="feature-arrow">↗</span>
-                </article>
-
-
-                <article class="feature">
-                    <div class="feature-icon">✧</div>
-
-                    <div>
-                        <h3>Experiences to remember</h3>
-                        <p>
-                            Find ideas for trekking, sightseeing,
-                            beach activities and nature trips.
-                        </p>
-                    </div>
-
-                    <span class="feature-arrow">↗</span>
-                </article>
-
-
-                <article class="feature">
-                    <div class="feature-icon">◇</div>
-
-                    <div>
-                        <h3>Your journey, your way</h3>
-                        <p>
-                            Explore travel ideas that suit your
-                            interests and adventure style.
-                        </p>
-                    </div>
-
-                    <span class="feature-arrow">↗</span>
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- FINAL CALL TO ACTION -->
-        <section class="final-cta">
-
-            <p class="eyebrow">YOUR NEXT CHAPTER AWAITS</p>
-
-            <h2>
-                Go where you<br>
-                feel most alive.
-            </h2>
+    <nav class="navbar">
+        <div class="logo">TRAVELX</div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="packages.html">Packages</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="tag">YOUR JOURNEY STARTS HERE</div>
+
+            <h1>
+                Discover Your<br>
+                Next <span>Adventure.</span>
+            </h1>
 
             <p>
-                The world is waiting. Let's make some memories.
+                Explore beautiful destinations, discover new cultures
+                and create unforgettable memories with TRAVELX.
+                Your next great journey is waiting for you.
             </p>
 
-            <a href="destinations.html" class="btn btn-white">
-                Start Exploring ↗
+            <a href="destinations.html" class="btn">
+                Explore Destinations →
             </a>
+        </div>
+    </header>
 
-        </section>
+    <section class="section">
+        <div class="section-heading">
+            <h2>Popular Destinations</h2>
+            <p>Discover some of India's most beautiful places.</p>
+        </div>
 
-    </main>
+        <div class="destination-grid">
 
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="footer-top">
-
-            <div>
-                <a href="index.html" class="logo footer-logo">
-                    ✳ Tripy<span>Plan</span>
-                </a>
-
-                <p>Find your somewhere.</p>
+            <div class="destination-card">
+                <div class="destination-icon">🏖️</div>
+                <h3>Goa</h3>
+                <p>Enjoy beautiful beaches, colourful sunsets and relaxing coastal experiences.</p>
+                <a href="goa.html">Explore Goa →</a>
             </div>
 
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="destinations.html">Destinations</a>
-                <a href="packages.html">Packages</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+            <div class="destination-card">
+                <div class="destination-icon">🏔️</div>
+                <h3>Manali</h3>
+                <p>Discover mountain views, green valleys and exciting adventure experiences.</p>
+                <a href="manali.html">Explore Manali →</a>
+            </div>
+
+            <div class="destination-card">
+                <div class="destination-icon">🏰</div>
+                <h3>Jaipur</h3>
+                <p>Explore royal palaces, historic forts and the colourful culture of Rajasthan.</p>
+                <a href="jaipur.html">Explore Jaipur →</a>
             </div>
 
         </div>
+    </section>
 
-        <div class="footer-bottom">
-            <p>© 2026 Tripy Plan. Made for explorers.</p>
-            <a href="#">Back to top ↑</a>
+    <section class="features">
+        <div class="feature-grid">
+
+            <div class="feature">
+                <div class="feature-icon">🗺️</div>
+                <h3>Explore More</h3>
+                <p>Find destination information and discover places for your next trip.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">✈️</div>
+                <h3>Plan Your Trip</h3>
+                <p>Browse sample travel packages and get ideas for your journey.</p>
+            </div>
+
+            <div class="feature">
+                <div class="feature-icon">🌍</div>
+                <h3>Create Memories</h3>
+                <p>Get inspired to experience new places, people and cultures.</p>
+            </div>
+
         </div>
+    </section>
 
+    <section class="cta">
+        <h2>Ready to Explore?</h2>
+        <p>Your next adventure could be closer than you think.</p>
+        <a href="packages.html" class="btn">Discover Packages →</a>
+    </section>
+
+    <footer>
+        <p>© 2026 TRAVELX — Explore • Travel • Discover</p>
+        <p>Student Project | Built with HTML and CSS</p>
     </footer>
 
 </body>
-  </html>
+</html>
+```
+
